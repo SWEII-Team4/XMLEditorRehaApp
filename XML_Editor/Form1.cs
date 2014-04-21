@@ -27,7 +27,7 @@ namespace XML_Editor
         private void Form1_Load(object sender, EventArgs e)
         {
             XmlTextReader datenLesen = new XmlTextReader("Home.xml");
-            XmlTextWriter datenSchreiben = new XmlTextWriter("Home.xml",Encoding.UTF8); 
+           // XmlTextWriter datenSchreiben = new XmlTextWriter("Home.xml",Encoding.UTF8); 
             XmlNodeType typ = new XmlNodeType();
             
 

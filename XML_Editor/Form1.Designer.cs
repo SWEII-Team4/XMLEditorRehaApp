@@ -41,6 +41,7 @@
             this.btnOpenImage = new System.Windows.Forms.Button();
             this.ibBild = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.lblTxt = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ibBild)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,14 +112,12 @@
             this.lblBeschreibung.TabIndex = 6;
             this.lblBeschreibung.Text = "Beschreibung";
             // 
-            // Text
+            // lblText
             // 
-            this.Text.AutoSize = true;
-            this.Text.Location = new System.Drawing.Point(53, 274);
-            this.Text.Name = "Text";
-            this.Text.Size = new System.Drawing.Size(28, 13);
-            this.Text.TabIndex = 7;
-            this.Text.Text = "Text";
+            this.lblText.Location = new System.Drawing.Point(0, 0);
+            this.lblText.Name = "lblText";
+            this.lblText.Size = new System.Drawing.Size(100, 23);
+            this.lblText.TabIndex = 0;
             // 
             // btnOpenImage
             // 
@@ -145,14 +144,24 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // lblTxt
+            // 
+            this.lblTxt.AutoSize = true;
+            this.lblTxt.Location = new System.Drawing.Point(45, 274);
+            this.lblTxt.Name = "lblTxt";
+            this.lblTxt.Size = new System.Drawing.Size(28, 13);
+            this.lblTxt.TabIndex = 11;
+            this.lblTxt.Text = "Text";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(677, 421);
+            this.Controls.Add(this.lblTxt);
             this.Controls.Add(this.ibBild);
             this.Controls.Add(this.btnOpenImage);
-            this.Controls.Add(this.Text);
             this.Controls.Add(this.lblBeschreibung);
             this.Controls.Add(this.lblBild);
             this.Controls.Add(this.lblTitel);
@@ -161,10 +170,12 @@
             this.Controls.Add(this.tbBeschreibung);
             this.Controls.Add(this.tbText);
             this.Controls.Add(this.btnSpeichern);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
+            this.Text = "XML Editor 4 RehaApp (by Team 4)";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ibBild)).EndInit();
             this.ResumeLayout(false);
@@ -186,6 +197,7 @@
         private System.Windows.Forms.Button btnOpenImage;
         private System.Windows.Forms.PictureBox ibBild;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label lblTxt;
     }
 }
 
