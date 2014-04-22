@@ -21,17 +21,47 @@ namespace XML_Editor
             InitializeComponent();
         }
 
-        XmlDocument xmlDoc;
-        String path;
 
+        
         private void Form1_Load(object sender, EventArgs e)
         {
-            XmlTextReader datenLesen = new XmlTextReader("Home.xml");
-           // XmlTextWriter datenSchreiben = new XmlTextWriter("Home.xml",Encoding.UTF8); 
-            XmlNodeType typ = new XmlNodeType();
-            
+            String[] arrXmlElemente = new String[4] { "Heading", "ShortText", "Thumbnail", "Text" };
+            TextBox[] arrTextBoxes = new TextBox[4] {tbTitel,tbBeschreibung,tbBild,tbText};
+            String path = @"Home.xml";
+            XmlDocument docHomeXml = new XmlDocument();
 
+            try
+            {
+                docHomeXml.Load(path);
+                XmlNode node = docHomeXml.DocumentElement;
 
+                foreach (XmlNode node1 in node.ChildNodes)
+                {
+                    foreach (XmlNode node2 in node1.ChildNodes)
+                    {
+                        if (node2.Name == "Heading")
+                        {                            
+                            tbTitel.Text = node2.InnerText;
+                        }
+                        if (node2.Name == "ShortText")
+                        {
+                            tbBeschreibung.Text = node2.InnerText;
+                        }
+                        if (node2.Name == "Thumbnail")
+                        {
+                            tbBild.Text = node2.InnerText;
+                        }
+                        if (node2.Name == "Text")
+                        {                           
+                            tbText.Text = node2.InnerText;
+                        }
+                        
+                    }
+                }
+            }catch(Exception except)
+            { MessageBox.Show(except.Message); }
+        }
+/*  
             while (datenLesen.Read())
             {
                 typ = datenLesen.NodeType;
@@ -60,53 +90,11 @@ namespace XML_Editor
                     }
                 }
             }
-        }
+        }*/
 
         private void btnSpeichern_Click(object sender, EventArgs e)
         {
-
-            XmlTextReader datenLesen = new XmlTextReader("Home.xml");
-            XmlNodeType typ = new XmlNodeType();
-            
-
-            while(true)
-            {
-                typ = datenLesen.NodeType;
-
-                if(typ == XmlNodeType.Element)
-                {
-                    if (datenLesen.Name == "Heading")
-                    {
-                        datenLesen.Read();
-                        tbTitel.Text = datenLesen.Value;
-                    }
-                    if (datenLesen.Name == "ShortText")
-                    {
-                        datenLesen.Read();
-                        tbBeschreibung.Text = datenLesen.Value;
-                    }
-                    if (datenLesen.Name == "Thumbnail")
-                    {
-                        datenLesen.Read();
-                        tbBild.Text = datenLesen.Value;
-                    }
-                    if (datenLesen.Name == "Text")
-                    {
-                        datenLesen.Read();
-                        tbText.Text = datenLesen.Value;
-                    }
-                }
-                  
-            }
-               
-
-
-
-
-
-
-
-           
+                           
         }
 
 
