@@ -133,12 +133,7 @@ namespace XML_Editor
             docHomeXml.Save(@"Home.xml");
         }
 
-        private void ibBild_Click(object sender, EventArgs e)
-        {
-            
-
-
-        }
+       
 
 
  
