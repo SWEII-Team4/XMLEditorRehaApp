@@ -139,7 +139,10 @@ namespace XML_Editor
             ofdDialog.ShowDialog();
             tbBild.Text = "";
             tbBild.Text = ofdDialog.FileName;
-            ibBild.Image = Image.FromFile(ofdDialog.FileName);
+            try {  ibBild.Image = Image.FromFile(ofdDialog.FileName);}
+            catch(Exception excep)
+            { }
+           
 
         }
 
