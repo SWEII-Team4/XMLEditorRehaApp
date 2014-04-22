@@ -159,6 +159,7 @@
             this.btnLaden.TabIndex = 12;
             this.btnLaden.Text = "(neu)Laden";
             this.btnLaden.UseVisualStyleBackColor = true;
+            this.btnLaden.Click += new System.EventHandler(this.btnLaden_Click);
             // 
             // ofdDialog
             // 

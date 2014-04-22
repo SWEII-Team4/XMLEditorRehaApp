@@ -146,6 +146,44 @@ namespace XML_Editor
 
         }
 
+        private void btnLaden_Click(object sender, EventArgs e)
+        {
+            String path = @"Home.xml";
+            XmlDocument docHomeXml = new XmlDocument();
+
+            try
+            {
+                docHomeXml.Load(path);
+                XmlNode node = docHomeXml.DocumentElement;
+
+                foreach (XmlNode node1 in node.ChildNodes)
+                {
+                    foreach (XmlNode node2 in node1.ChildNodes)
+                    {
+                        if (node2.Name == "Heading")
+                        {
+                            tbTitel.Text = node2.InnerText;
+                        }
+                        if (node2.Name == "ShortText")
+                        {
+                            tbBeschreibung.Text = node2.InnerText;
+                        }
+                        if (node2.Name == "Thumbnail")
+                        {
+                            tbBild.Text = node2.InnerText;
+                        }
+                        if (node2.Name == "Text")
+                        {
+                            tbText.Text = node2.InnerText;
+                        }
+
+                    }
+                }
+            }
+            catch (Exception except)
+            { MessageBox.Show(except.Message); }
+        }
+
        
 
 
