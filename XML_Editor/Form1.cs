@@ -94,7 +94,50 @@ namespace XML_Editor
 
         private void btnSpeichern_Click(object sender, EventArgs e)
         {
-                           
+            String[] arrXmlElemente = new String[4] { "Heading", "ShortText", "Thumbnail", "Text" };
+            TextBox[] arrTextBoxes = new TextBox[4] { tbTitel, tbBeschreibung, tbBild, tbText };
+            String path = @"Home.xml";
+            XmlDocument docHomeXml = new XmlDocument();
+
+            try
+            {
+                docHomeXml.Load(path);
+                XmlNode node = docHomeXml.DocumentElement;
+
+                foreach (XmlNode node1 in node.ChildNodes)
+                {
+                    foreach (XmlNode node2 in node1.ChildNodes)
+                    {
+                        if (node2.Name == "Heading")
+                        {
+                            node2.InnerText =tbTitel.Text ;
+                        }
+                        if (node2.Name == "ShortText")
+                        {
+                            node2.InnerText = tbBeschreibung.Text;
+                        }
+                        if (node2.Name == "Thumbnail")
+                        {
+                            node2.InnerText = tbBild.Text;
+                        }
+                        if (node2.Name == "Text")
+                        {
+                            node2.InnerText = tbText.Text;
+                        }
+
+                    }
+                }
+            }
+            catch (Exception except)
+            { MessageBox.Show(except.Message); }
+            docHomeXml.Save(@"Home.xml");
+        }
+
+        private void ibBild_Click(object sender, EventArgs e)
+        {
+            
+
+
         }
 
 

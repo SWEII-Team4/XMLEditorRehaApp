@@ -42,12 +42,13 @@
             this.ibBild = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.lblTxt = new System.Windows.Forms.Label();
+            this.btnLaden = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ibBild)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSpeichern
             // 
-            this.btnSpeichern.Location = new System.Drawing.Point(539, 371);
+            this.btnSpeichern.Location = new System.Drawing.Point(575, 371);
             this.btnSpeichern.Name = "btnSpeichern";
             this.btnSpeichern.Size = new System.Drawing.Size(75, 23);
             this.btnSpeichern.TabIndex = 0;
@@ -139,6 +140,7 @@
             this.ibBild.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ibBild.TabIndex = 10;
             this.ibBild.TabStop = false;
+            this.ibBild.Click += new System.EventHandler(this.ibBild_Click);
             // 
             // openFileDialog1
             // 
@@ -153,12 +155,22 @@
             this.lblTxt.TabIndex = 11;
             this.lblTxt.Text = "Text";
             // 
+            // btnLaden
+            // 
+            this.btnLaden.Location = new System.Drawing.Point(494, 371);
+            this.btnLaden.Name = "btnLaden";
+            this.btnLaden.Size = new System.Drawing.Size(75, 23);
+            this.btnLaden.TabIndex = 12;
+            this.btnLaden.Text = "(neu)Laden";
+            this.btnLaden.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(677, 421);
+            this.Controls.Add(this.btnLaden);
             this.Controls.Add(this.lblTxt);
             this.Controls.Add(this.ibBild);
             this.Controls.Add(this.btnOpenImage);
@@ -198,6 +210,7 @@
         private System.Windows.Forms.PictureBox ibBild;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Label lblTxt;
+        private System.Windows.Forms.Button btnLaden;
     }
 }
 
