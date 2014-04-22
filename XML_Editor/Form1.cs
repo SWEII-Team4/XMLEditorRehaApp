@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 //Inkludieren des XML-Library zum Behandeln von XML-Dateien
 using System.Xml;
-
+using System.IO;
 
 namespace XML_Editor
 {
@@ -131,6 +131,16 @@ namespace XML_Editor
             catch (Exception except)
             { MessageBox.Show(except.Message); }
             docHomeXml.Save(@"Home.xml");
+        }
+
+        private void btnOpenImage_Click(object sender, EventArgs e)
+        {
+            ofdDialog.CheckFileExists = true;
+            ofdDialog.ShowDialog();
+            tbBild.Text = "";
+            tbBild.Text = ofdDialog.FileName;
+            ibBild.Image = Image.FromFile(ofdDialog.FileName);
+
         }
 
        

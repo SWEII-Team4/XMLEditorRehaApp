@@ -40,9 +40,9 @@
             this.lblText = new System.Windows.Forms.Label();
             this.btnOpenImage = new System.Windows.Forms.Button();
             this.ibBild = new System.Windows.Forms.PictureBox();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.lblTxt = new System.Windows.Forms.Label();
             this.btnLaden = new System.Windows.Forms.Button();
+            this.ofdDialog = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.ibBild)).BeginInit();
             this.SuspendLayout();
             // 
@@ -129,6 +129,7 @@
             this.btnOpenImage.Text = "...";
             this.btnOpenImage.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnOpenImage.UseVisualStyleBackColor = true;
+            this.btnOpenImage.Click += new System.EventHandler(this.btnOpenImage_Click);
             // 
             // ibBild
             // 
@@ -140,10 +141,6 @@
             this.ibBild.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ibBild.TabIndex = 10;
             this.ibBild.TabStop = false;
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // lblTxt
             // 
@@ -162,6 +159,10 @@
             this.btnLaden.TabIndex = 12;
             this.btnLaden.Text = "(neu)Laden";
             this.btnLaden.UseVisualStyleBackColor = true;
+            // 
+            // ofdDialog
+            // 
+            this.ofdDialog.InitialDirectory = "C:\\";
             // 
             // Form1
             // 
@@ -207,9 +208,9 @@
         private System.Windows.Forms.Label lblText;
         private System.Windows.Forms.Button btnOpenImage;
         private System.Windows.Forms.PictureBox ibBild;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Label lblTxt;
         private System.Windows.Forms.Button btnLaden;
+        private System.Windows.Forms.OpenFileDialog ofdDialog;
     }
 }
 
