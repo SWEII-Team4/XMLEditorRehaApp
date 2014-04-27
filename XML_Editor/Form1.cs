@@ -120,7 +120,7 @@ namespace XML_Editor
                         {
                             node2.InnerText = tbText.Text;
                         }
-
+                        updateBild();
                     }
                 }
             }
@@ -130,8 +130,15 @@ namespace XML_Editor
         }  
 
         private void updateBild()
+        {   String path = tbBild.Text.ToString();
+        String[] tmp = path.Split(':');
+
+        try
         {
-            try { ibBild.Image = new Bitmap(tbBild.Text.ToString()); }
+            if (tmp[0] == "http" | tmp[0] == "ftp" | tmp[0] == "https")
+                ibBild.Image = new Bitmap(new MemoryStream(new System.Net.WebClient().DownloadData(tbBild.Text)));
+            else { MessageBox.Show("lokales Bild"); } //TO BE Optimiszed !!!!!!!
+        }
             catch (Exception excep)
             { MessageBox.Show("Bild Not Found"); }
             
