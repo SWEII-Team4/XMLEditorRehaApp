@@ -48,7 +48,7 @@
             // 
             // btnSpeichern
             // 
-            this.btnSpeichern.Location = new System.Drawing.Point(575, 371);
+            this.btnSpeichern.Location = new System.Drawing.Point(761, 482);
             this.btnSpeichern.Name = "btnSpeichern";
             this.btnSpeichern.Size = new System.Drawing.Size(75, 23);
             this.btnSpeichern.TabIndex = 0;
@@ -58,58 +58,61 @@
             // 
             // tbText
             // 
-            this.tbText.Location = new System.Drawing.Point(87, 274);
+            this.tbText.Location = new System.Drawing.Point(134, 263);
             this.tbText.Multiline = true;
             this.tbText.Name = "tbText";
-            this.tbText.Size = new System.Drawing.Size(333, 108);
+            this.tbText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbText.Size = new System.Drawing.Size(355, 188);
             this.tbText.TabIndex = 1;
             // 
             // tbBeschreibung
             // 
-            this.tbBeschreibung.Location = new System.Drawing.Point(87, 162);
-            this.tbBeschreibung.Multiline = true;
+            this.tbBeschreibung.Location = new System.Drawing.Point(134, 189);
             this.tbBeschreibung.Name = "tbBeschreibung";
-            this.tbBeschreibung.Size = new System.Drawing.Size(323, 56);
+            this.tbBeschreibung.Size = new System.Drawing.Size(354, 20);
             this.tbBeschreibung.TabIndex = 1;
             // 
             // tbBild
             // 
-            this.tbBild.Location = new System.Drawing.Point(87, 237);
+            this.tbBild.Location = new System.Drawing.Point(135, 474);
             this.tbBild.Name = "tbBild";
-            this.tbBild.Size = new System.Drawing.Size(284, 20);
+            this.tbBild.Size = new System.Drawing.Size(316, 20);
             this.tbBild.TabIndex = 1;
             // 
             // tbTitel
             // 
-            this.tbTitel.Location = new System.Drawing.Point(86, 121);
+            this.tbTitel.Location = new System.Drawing.Point(135, 113);
             this.tbTitel.Name = "tbTitel";
-            this.tbTitel.Size = new System.Drawing.Size(323, 20);
+            this.tbTitel.Size = new System.Drawing.Size(354, 20);
             this.tbTitel.TabIndex = 2;
             // 
             // lblTitel
             // 
             this.lblTitel.AutoSize = true;
-            this.lblTitel.Location = new System.Drawing.Point(53, 128);
+            this.lblTitel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitel.Location = new System.Drawing.Point(89, 112);
             this.lblTitel.Name = "lblTitel";
-            this.lblTitel.Size = new System.Drawing.Size(27, 13);
+            this.lblTitel.Size = new System.Drawing.Size(40, 18);
             this.lblTitel.TabIndex = 4;
             this.lblTitel.Text = "Titel";
             // 
             // lblBild
             // 
             this.lblBild.AutoSize = true;
-            this.lblBild.Location = new System.Drawing.Point(57, 237);
+            this.lblBild.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBild.Location = new System.Drawing.Point(93, 473);
             this.lblBild.Name = "lblBild";
-            this.lblBild.Size = new System.Drawing.Size(24, 13);
+            this.lblBild.Size = new System.Drawing.Size(36, 18);
             this.lblBild.TabIndex = 5;
             this.lblBild.Text = "Bild";
             // 
             // lblBeschreibung
             // 
             this.lblBeschreibung.AutoSize = true;
-            this.lblBeschreibung.Location = new System.Drawing.Point(9, 162);
+            this.lblBeschreibung.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBeschreibung.Location = new System.Drawing.Point(18, 188);
             this.lblBeschreibung.Name = "lblBeschreibung";
-            this.lblBeschreibung.Size = new System.Drawing.Size(72, 13);
+            this.lblBeschreibung.Size = new System.Drawing.Size(110, 18);
             this.lblBeschreibung.TabIndex = 6;
             this.lblBeschreibung.Text = "Beschreibung";
             // 
@@ -122,7 +125,7 @@
             // 
             // btnOpenImage
             // 
-            this.btnOpenImage.Location = new System.Drawing.Point(388, 237);
+            this.btnOpenImage.Location = new System.Drawing.Point(457, 474);
             this.btnOpenImage.Name = "btnOpenImage";
             this.btnOpenImage.Size = new System.Drawing.Size(32, 20);
             this.btnOpenImage.TabIndex = 8;
@@ -135,7 +138,7 @@
             // 
             this.ibBild.Image = ((System.Drawing.Image)(resources.GetObject("ibBild.Image")));
             this.ibBild.InitialImage = ((System.Drawing.Image)(resources.GetObject("ibBild.InitialImage")));
-            this.ibBild.Location = new System.Drawing.Point(447, 121);
+            this.ibBild.Location = new System.Drawing.Point(617, 121);
             this.ibBild.Name = "ibBild";
             this.ibBild.Size = new System.Drawing.Size(203, 222);
             this.ibBild.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -145,15 +148,16 @@
             // lblTxt
             // 
             this.lblTxt.AutoSize = true;
-            this.lblTxt.Location = new System.Drawing.Point(45, 274);
+            this.lblTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTxt.Location = new System.Drawing.Point(88, 262);
             this.lblTxt.Name = "lblTxt";
-            this.lblTxt.Size = new System.Drawing.Size(28, 13);
+            this.lblTxt.Size = new System.Drawing.Size(40, 18);
             this.lblTxt.TabIndex = 11;
             this.lblTxt.Text = "Text";
             // 
             // btnLaden
             // 
-            this.btnLaden.Location = new System.Drawing.Point(494, 371);
+            this.btnLaden.Location = new System.Drawing.Point(650, 482);
             this.btnLaden.Name = "btnLaden";
             this.btnLaden.Size = new System.Drawing.Size(75, 23);
             this.btnLaden.TabIndex = 12;
@@ -170,7 +174,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(677, 421);
+            this.ClientSize = new System.Drawing.Size(890, 648);
             this.Controls.Add(this.btnLaden);
             this.Controls.Add(this.lblTxt);
             this.Controls.Add(this.ibBild);

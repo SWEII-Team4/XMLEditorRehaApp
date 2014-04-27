@@ -24,78 +24,74 @@ namespace XML_Editor
 
         
         private void Form1_Load(object sender, EventArgs e)
-        {
-            String[] arrXmlElemente = new String[4] { "Heading", "ShortText", "Thumbnail", "Text" };
-            TextBox[] arrTextBoxes = new TextBox[4] {tbTitel,tbBeschreibung,tbBild,tbText};
-            String path = @"Home.xml";
-            XmlDocument docHomeXml = new XmlDocument();
-
-            try
-            {
-                docHomeXml.Load(path);
-                XmlNode node = docHomeXml.DocumentElement;
-
-                foreach (XmlNode node1 in node.ChildNodes)
-                {
-                    foreach (XmlNode node2 in node1.ChildNodes)
-                    {
-                        if (node2.Name == "Heading")
-                        {                            
-                            tbTitel.Text = node2.InnerText;
-                        }
-                        if (node2.Name == "ShortText")
-                        {
-                            tbBeschreibung.Text = node2.InnerText;
-                        }
-                        if (node2.Name == "Thumbnail")
-                        {
-                            tbBild.Text = node2.InnerText;
-                        }
-                        if (node2.Name == "Text")
-                        {                           
-                            tbText.Text = node2.InnerText;
-                        }
-                        
-                    }
-                }
-            }catch(Exception except)
-            { MessageBox.Show(except.Message); }
+        {           
+            leseXML();
+            updateBild();
         }
-/*  
-            while (datenLesen.Read())
-            {
-                typ = datenLesen.NodeType;
-
-                if (typ == XmlNodeType.Element)
-                {
-                    if (datenLesen.Name == "Heading")
-                    {
-                        datenLesen.Read();
-                        tbTitel.Text = datenLesen.Value;
-                    }
-                    if (datenLesen.Name == "ShortText")
-                    {
-                        datenLesen.Read();
-                        tbBeschreibung.Text = datenLesen.Value;
-                    }
-                    if (datenLesen.Name == "Thumbnail")
-                    {
-                        datenLesen.Read();
-                        tbBild.Text = datenLesen.Value;
-                    }
-                    if (datenLesen.Name == "Text")
-                    {
-                        datenLesen.Read();
-                        tbText.Text = datenLesen.Value;
-                    }
-                }
-            }
-        }*/
 
         private void btnSpeichern_Click(object sender, EventArgs e)
         {
-            String[] arrXmlElemente = new String[4] { "Heading", "ShortText", "Thumbnail", "Text" };
-            TextBox[] arrTextBoxes = new TextBox[4] { tbTitel, tbBeschreibung, tbBild, tbText };
+            
+            speichereXML();
+            updateBild();
+        }
+
+        private void btnOpenImage_Click(object sender, EventArgs e)
+        {
+            ofdDialog.CheckFileExists = true;
+            ofdDialog.ShowDialog();
+            tbBild.Text = "";
+            tbBild.Text = ofdDialog.FileName.ToString();
+            updateBild();
+           
+
+        }
+
+        private void btnLaden_Click(object sender, EventArgs e)
+        {
+            leseXML();
+
+
+        }
+        private void leseXML()
+        {
+            String pfad = @"Home.xml";
+            XmlDocument docHomeXml = new XmlDocument();
+            try
+            {
+                docHomeXml.Load(pfad);
+                XmlNode node = docHomeXml.DocumentElement;
+
+                foreach (XmlNode node1 in node.ChildNodes)
+                {
+                    foreach (XmlNode node2 in node1.ChildNodes)
+                    {
+                        if (node2.Name == "Heading")
+                        {
+                            tbTitel.Text = node2.InnerText.ToString();
+                        }
+                        if (node2.Name == "ShortText")
+                        {
+                            tbBeschreibung.Text = node2.InnerText.ToString();
+                        }
+                        if (node2.Name == "Thumbnail")
+                        {
+                            tbBild.Text = node2.InnerText.ToString();
+                        }
+                        if (node2.Name == "Text")
+                        {
+                            tbText.Text = node2.InnerText.ToString();
+                        }
+
+                    }
+                }
+            }
+            catch (Exception except)
+            { MessageBox.Show(except.Message); }
+        }
+        
+        private void speichereXML()
+        {
             String path = @"Home.xml";
             XmlDocument docHomeXml = new XmlDocument();
 
@@ -110,7 +106,7 @@ namespace XML_Editor
                     {
                         if (node2.Name == "Heading")
                         {
-                            node2.InnerText =tbTitel.Text ;
+                            node2.InnerText = tbTitel.Text;
                         }
                         if (node2.Name == "ShortText")
                         {
@@ -131,62 +127,14 @@ namespace XML_Editor
             catch (Exception except)
             { MessageBox.Show(except.Message); }
             docHomeXml.Save(@"Home.xml");
-        }
+        }  
 
-        private void btnOpenImage_Click(object sender, EventArgs e)
+        private void updateBild()
         {
-            ofdDialog.CheckFileExists = true;
-            ofdDialog.ShowDialog();
-            tbBild.Text = "";
-            tbBild.Text = ofdDialog.FileName;
-            try {  ibBild.Image = Image.FromFile(ofdDialog.FileName);}
-            catch(Exception excep)
-            { }
-           
-
+            try { ibBild.Image = new Bitmap(tbBild.Text.ToString()); }
+            catch (Exception excep)
+            { MessageBox.Show("Bild Not Found"); }
+            
         }
-
-        private void btnLaden_Click(object sender, EventArgs e)
-        {
-            String path = @"Home.xml";
-            XmlDocument docHomeXml = new XmlDocument();
-
-            try
-            {
-                docHomeXml.Load(path);
-                XmlNode node = docHomeXml.DocumentElement;
-
-                foreach (XmlNode node1 in node.ChildNodes)
-                {
-                    foreach (XmlNode node2 in node1.ChildNodes)
-                    {
-                        if (node2.Name == "Heading")
-                        {
-                            tbTitel.Text = node2.InnerText;
-                        }
-                        if (node2.Name == "ShortText")
-                        {
-                            tbBeschreibung.Text = node2.InnerText;
-                        }
-                        if (node2.Name == "Thumbnail")
-                        {
-                            tbBild.Text = node2.InnerText;
-                        }
-                        if (node2.Name == "Text")
-                        {
-                            tbText.Text = node2.InnerText;
-                        }
-
-                    }
-                }
-            }
-            catch (Exception except)
-            { MessageBox.Show(except.Message); }
-        }
-
-       
-
-
- 
     }
 }
