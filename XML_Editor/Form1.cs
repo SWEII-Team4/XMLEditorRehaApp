@@ -136,11 +136,20 @@ namespace XML_Editor
         try
         {
             if (tmp[0] == "http" | tmp[0] == "ftp" | tmp[0] == "https")
+            {
+                
                 ibBild.Image = new Bitmap(new MemoryStream(new System.Net.WebClient().DownloadData(tbBild.Text)));
-            else { MessageBox.Show("lokales Bild"); } //TO BE Optimiszed !!!!!!!
-        }
+                MessageBox.Show("URL Bild");
+            }
+            else
+            {
+                ibBild.Image = new Bitmap(tbBild.Text.ToString());
+                MessageBox.Show("lokales Bild"); } //TO BE Optimiszed !!!!!!!
+            }
             catch (Exception excep)
-            { MessageBox.Show("Bild Not Found"); }
+            { 
+                MessageBox.Show("Bild Not Found"); 
+            }
             
         }
     }
